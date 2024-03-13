@@ -50,7 +50,7 @@ RUN chgrp -R www-data /var/www
 RUN find /var/www -type d -exec chmod 775 {} +
 RUN find /var/www -type f -exec chmod 664 {} +
 
-EXPOSE 80
+EXPOSE 8081
 
 # start Apache2 on image start
 CMD ["/usr/sbin/apache2ctl","-DFOREGROUND"]
