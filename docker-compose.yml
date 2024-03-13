@@ -5,7 +5,7 @@ services:
     volumes:
       - "./frontend:/usr/local/apache2/htdocs"
     ports:
-      - 3000:80
+      - 3000:8081
   backend:
     container_name: simple-backend
     build:
@@ -14,7 +14,7 @@ services:
     volumes:
       - "./api:/var/www/html/"
     ports:
-      - 5000:80
+      - 5000:8081
   database:
     image: mysql:latest
     environment:
@@ -27,7 +27,7 @@ services:
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     ports:
-      - 8080:80
+      - 8080:8081
     environment:
       - PMA_HOST=database
       - PMA_PORT=3306
